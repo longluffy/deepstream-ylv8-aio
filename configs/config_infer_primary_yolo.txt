@@ -1,0 +1,17 @@
+[property]
+gpu-id=0
+net-scale-factor=0.0039215697906911373
+model-engine-file=../models/yolov8s.engine
+labelfile-path=../models/yolov8_labels.txt
+batch-size=1
+network-mode=2
+num-detected-classes=80
+gie-unique-id=1
+process-mode=1
+parse-bbox-func-name=NvDsInferParseCustomYolo
+custom-lib-path=/opt/nvidia/deepstream/deepstream/lib/libnvds_infercustomparser.so
+
+[class-attrs-all]
+pre-cluster-threshold=0.2
+eps=0.2
+minBoxes=1 

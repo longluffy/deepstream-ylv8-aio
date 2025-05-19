@@ -1,0 +1,12 @@
+[property]
+gpu-id=0
+net-scale-factor=0.0039215697906911373
+model-engine-file=../models/arcface.engine
+batch-size=1
+network-mode=2
+gie-unique-id=2
+process-mode=2
+input-object-min-height=32
+input-object-min-width=32
+operate-on-class-ids=0
+infer-on-gie-id=1 

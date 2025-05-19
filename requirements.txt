@@ -1,0 +1,6 @@
+numpy>=1.19.0
+grpcio>=1.40.0
+grpcio-tools>=1.40.0
+protobuf>=3.17.0
+PyGObject>=3.42.0
+pyds>=1.0.0  # NVIDIA DeepStream Python bindings 

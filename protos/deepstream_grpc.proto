@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package deepstream;
+
+// Input video frame message
+message VideoFrame {
+    bytes frame_data = 1;  // Raw frame data
+    int32 width = 2;
+    int32 height = 3;
+    string format = 4;     // e.g., "RGB", "BGR"
+    int64 timestamp_us = 5;
+    string source_id = 6;
+}
+
+// Output result message containing JSON metadata
+message ResultData {
+    string json_payload = 1;
+    int64 timestamp_us = 2;
+    string source_id = 3;
+}
+
+// Acknowledgment messages
+message StreamAck {
+    bool success = 1;
+    string message = 2;
+}
+
+message ResultAck {
+    bool success = 1;
+    string message = 2;
+}
+
+// Service for receiving video frames
+service FrameStreamer {
+    rpc StreamFrames(stream VideoFrame) returns (StreamAck) {}
+}
+
+// Service for sending results
+service ResultReceiver {
+    rpc SendResult(ResultData) returns (ResultAck) {}
+} 
